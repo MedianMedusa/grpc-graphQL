@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = ".;phones";
+
+package phones;
+
+service Phones {
+	rpc sendRequest (Request) returns (Response) {}
+}
+
+message Request {
+	string phone = 1;
+	string code = 2;
+}
+
+message Response {
+	bool found = 1;
+	bool approved = 2;
+}
